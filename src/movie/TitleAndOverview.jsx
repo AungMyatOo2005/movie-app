@@ -20,16 +20,16 @@ const TitleAndOverview = ({ movie }) => {
         <span className="text-yellow-500">Release Date</span>
         <span className="text-white">- {movie.release_date}</span>
       </div>
-      <div className="font-Poppins flex items-center gap-1">
-        {movie.budget && (
-          <>
-            <span className="text-yellow-500">Budget</span>
-            <span className="text-white">
-              - ${movie.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-            </span>
-          </>
-        )}
-      </div>
+      {movie.budget ? (
+        <div className="font-Poppins flex items-center gap-1">
+          <span className="text-yellow-500">Budget</span>
+          <span className="text-white">
+            - ${movie.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+          </span>
+        </div>
+      ) : (
+        ""
+      )}
       <p className="mt-5 text-white font-Poppins text-[14px]">
         {movie.overview} /
       </p>
