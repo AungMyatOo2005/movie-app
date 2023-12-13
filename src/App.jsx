@@ -9,11 +9,11 @@ import PageNotFound from "./page_not_found/PageNotFound";
 const App = () => {
   return (
     <ContextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/movie-app">
         <Routes>
-          <Route path="/movie-app" element={<Home />} />
-          <Route path="/movie-app/movie/:id" element={<Movie />} />
-          <Route path="/movie-app/favorite" element={<FavoriteMovieList />} />
+          <Route index element={<Home />} />
+          <Route path="/movie/:id" element={<Movie />} />
+          <Route path="/favorite" element={<FavoriteMovieList />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>

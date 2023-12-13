@@ -23,7 +23,7 @@ const SideBar = () => {
       <button
         className="bg-yellow-500 py-2 px-2 rounded-sm text-[12px] font-Poppins hover:scale-105  active:scale-100 active:translate-y-0 w-[100px] mb-2 mx-auto"
         onClick={() => {
-          navigator("/movie-app/favorite");
+          navigator("/favorite");
           setIsLoading(true);
         }}
       >
