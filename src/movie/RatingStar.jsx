@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StarIcon, ArrowLeftIcon } from "@heroicons/react/24/solid";
+import { StarIcon, ArrowLongLeftIcon } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
 
 const RatingStar = ({ movie }) => {
@@ -52,7 +52,7 @@ const RatingStar = ({ movie }) => {
   };
 
   return (
-    <div className="w-full py-5 px-10">
+    <div className="w-full pt-2 pb-4 px-10">
       <div className="flex items-center w-full">
         <button
           className="hover:translate-y-[-2px] transition-transform"
@@ -60,7 +60,7 @@ const RatingStar = ({ movie }) => {
             navigator(-1);
           }}
         >
-          <ArrowLeftIcon className="text-white w-[30px] cursor-pointer" />
+          <ArrowLongLeftIcon className="text-yellow-500 w-[40px] cursor-pointer" />
         </button>
         <div className="flex ml-auto gap-1">
           {Array.from({ length: 5 }, (_, index) => (
@@ -74,18 +74,16 @@ const RatingStar = ({ movie }) => {
           </span>
         </div>
       </div>
-      <div className="w-fit ml-auto mt-5">
-        <button
-          className={`font-Poppins hover:scale-105 active:scale-100 active:translate-y-0   transition-transform absolute right-[20px] xs:right-[40px] ss:right-[50px] sm:right-[180px] md:right-[240px] z-[30] rounded-sm top-14 ${
-            isAlreadyHave()
-              ? "bg-yellow-500"
-              : "border-2 border-yellow-500 bg-slate-500"
-          } py-2 px-4 rounded-md text-white text-[14px] sm:text-[16px]`}
-          onClick={handleLocalStorage}
-        >
-          {isAlreadyHave() ? "Remove from Favorite" : "Add to Favorite"}
-        </button>
-      </div>
+      <button
+        className={`font-Poppins hover:scale-105 active:scale-100 active:translate-y-0   transition-transform absolute right-[20px] xs:right-[40px] ss:right-[50px] sm:right-[180px] md:right-[240px] z-[30] rounded-sm top-12 ${
+          isAlreadyHave()
+            ? "bg-yellow-500"
+            : "border-2 border-yellow-400 bg-slate-500"
+        } py-2 px-4 rounded-md text-white text-[14px] sm:text-[16px]`}
+        onClick={handleLocalStorage}
+      >
+        {isAlreadyHave() ? "Remove from Favorite" : "Add to Favorite"}
+      </button>
     </div>
   );
 };

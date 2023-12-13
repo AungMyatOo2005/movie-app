@@ -11,10 +11,8 @@ const Head = () => {
     setSidebar,
   } = useContext(MyContext);
   return (
-    <header className="py-5 px-4 sm:px-8 flex flex-col items-center gap-4 fixed backdrop-blur-[5px] w-full z-10 bg-[#00000036]">
-      <div
-        className="gap-6 md:gap-10items-center justify-between w-full flex items-center"
-      >
+    <div className="py-5 px-4 sm:px-8 flex flex-col items-center gap-4 fixed backdrop-blur-[5px] w-full z-10 bg-[#00000036]">
+      <div className="gap-6 md:gap-10items-center justify-between w-full flex items-center">
         <h3 className="text-[22px] sm:text-[30px] font-Poppins text-yellow-500 font-bold">
           Metflix
         </h3>
@@ -51,7 +49,7 @@ const Head = () => {
         }}
         value={searchValue}
       />
-    </header>
+    </div>
   );
 };
 

@@ -9,10 +9,7 @@ const Home = () => {
   return (
     <div>
       <Head />
-      <div
-        className="flex items-start pt-36 ss:pt-24"
-        onClick={() => setSidebar(false)}
-      >
+      <div className="flex items-start pt-36 ss:pt-24">
         <div className="w-[240px] relative hidden md:block">
           <SideBar />
         </div>

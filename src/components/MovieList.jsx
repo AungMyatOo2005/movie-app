@@ -14,10 +14,11 @@ const MovieList = () => {
     setIsLoading,
     currentPage,
     setCurrentPage,
+    movies,
+    setMovies,
   } = useContext(MyContext);
   const apiUrl = "https://api.themoviedb.org/3/";
   const api_key = "04c35731a5ee918f014970082a0088b1";
-  const [movies, setMovies] = useState([]);
   const [error, setError] = useState(false);
   const [totalPage, setTotalPage] = useState(1);
   useEffect(() => {

@@ -7,6 +7,7 @@ const ContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [sidebar, setSidebar] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [movies, setMovies] = useState([]);
   return (
     <MyContext.Provider
       value={{
@@ -22,6 +23,8 @@ const ContextProvider = ({ children }) => {
         setCurrentPage,
         sidebar,
         setSidebar,
+        movies,
+        setMovies,
       }}
     >
       {children}

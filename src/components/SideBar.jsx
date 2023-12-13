@@ -15,13 +15,15 @@ const SideBar = () => {
     setIsLoading,
     setCurrentPage,
     setSidebar,
+    movies,
+    setMovies,
   } = useContext(MyContext);
   return (
     <div className="mt-3 flex flex-col gap-2 h-[450px] overflow-y-auto overflow-x-hidden side-bar fixed scroll-smooth ">
       <button
         className="bg-yellow-500 py-2 px-2 rounded-sm text-[12px] font-Poppins hover:scale-105  active:scale-100 active:translate-y-0 w-[100px] mb-2 mx-auto"
         onClick={() => {
-          navigator("favorite");
+          navigator("/favorite");
           setIsLoading(true);
         }}
       >
@@ -31,7 +33,9 @@ const SideBar = () => {
         className={`text-blue-500 text-[18px] select-none relative w-full genre py-4 px-8 ${
           !genreId ? "bg-[#8f8f8f28]" : ""
         }`}
-        onClick={() => setGenreId(false)}
+        onClick={() => {
+          setGenreId(false);
+        }}
       >
         <div className="flex items-center gap-2 z-10 w-full text-[16px]">
           {selectText}
@@ -73,6 +77,7 @@ const SideBar = () => {
             setIsLoading(genreId !== genre.id && true);
             setCurrentPage(1);
             setSidebar(false);
+            setMovies(genreId !== genre.id ? [] : movies);
             window.scrollTo(0, 0);
           }}
         >

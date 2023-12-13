@@ -17,15 +17,21 @@ const FavoriteMovieList = () => {
       >
         <ArrowLongLeftIcon className="w-[40px] text-yellow-500" />
       </button>
-      <h1 className="w-full text-yellow-500 font-semibold text-[24px] text-center underline">
-        Favorite Movie List
-      </h1>
-      {movie && (
-        <div className="grid grid-cols-3 sm:grid-cols-4 sm:gap-10 gap-4 pt-10">
-          {movie.map((movie) => (
-            <MovieCard movie={movie} key={movie.id} />
-          ))}
-        </div>
+      {movie.length > 0 ? (
+        <>
+          <h1 className="w-full text-yellow-500 font-semibold text-[24px] text-center underline">
+            Favorite Movie List
+          </h1>
+          <div className="grid grid-cols-3 sm:grid-cols-4 sm:gap-10 gap-4 pt-10">
+            {movie.map((movie) => (
+              <MovieCard movie={movie} key={movie.id} />
+            ))}
+          </div>
+        </>
+      ) : (
+        <h1 className="w-full text-center text-yellow-500 font-semibold text-[24px] pt-36">
+          No favorite movie in here.
+        </h1>
       )}
     </div>
   );

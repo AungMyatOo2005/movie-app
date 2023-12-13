@@ -16,6 +16,7 @@ const ResponsiveSidebar = () => {
     setCurrentPage,
     sidebar,
     setSidebar,
+    setMovies,
   } = useContext(MyContext);
   return (
     <>
@@ -24,9 +25,9 @@ const ResponsiveSidebar = () => {
           <button
             className="bg-yellow-500 py-2 px-2 rounded-sm text-[12px] font-Poppins hover:scale-105  active:scale-100 active:translate-y-0 w-[100px] mb-2 mx-auto z-10"
             onClick={() => {
-              navigator("favorite");
+              navigator("/favorite");
               setIsLoading(true);
-            }}F
+            }}
           >
             My Favorite
           </button>
@@ -42,7 +43,7 @@ const ResponsiveSidebar = () => {
                 className=" cursor-pointer p-2"
                 onClick={() => {
                   setGenreId(false);
-                  // setSearchValue("");
+                  setSearchValue("");
                   setCurrentPage(1);
                   setIsToggle((pre) => !pre);
                 }}
@@ -76,6 +77,7 @@ const ResponsiveSidebar = () => {
                 setIsLoading(genreId !== genre.id && true);
                 setCurrentPage(1);
                 setSidebar(false);
+                setMovies(genreId !== genre.id ? [] : movies);
                 window.scrollTo(0, 0);
               }}
             >
