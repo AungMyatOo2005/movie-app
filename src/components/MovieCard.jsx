@@ -11,7 +11,7 @@ const MovieCard = ({ movie }) => {
     <div
       className="relative cursor-pointer hover:scale-105 translate-y-2 transition-all"
       onClick={() => {
-        navigator(`/movie-app/movie/${movie.id}`);
+        navigator(`/movie/${movie.id}`);
         setIsLoading(true);
       }}
     >
