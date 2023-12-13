@@ -7,7 +7,7 @@ const PageNotFound = () => {
       <h1 className="text-white text-[50px] font-bold font-Poppins">404</h1>
       <h1 className="text-yellow-500 text-[34px] font-bold font-Poppins">Page Not Found</h1>
       <div className="flex gap-2">
-        <span className="text-white">back to home page</span><button className="text-yellow-500 underline" onClick={()=>navigator("/")}>back</button>
+        <span className="text-white">back to home page</span><button className="text-yellow-500 underline" onClick={()=>navigator("/movie-app/")}>back</button>
       </div>
     </div>
   );

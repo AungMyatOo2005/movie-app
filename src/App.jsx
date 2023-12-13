@@ -11,9 +11,9 @@ const App = () => {
     <ContextProvider>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="/movie/:id" element={<Movie />} />
-          <Route path="/favorite" element={<FavoriteMovieList />} />
+          <Route path="/movie-app" element={<Home />} />
+          <Route path="/movie-app/movie/:id" element={<Movie />} />
+          <Route path="/movie-app/favorite" element={<FavoriteMovieList />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
