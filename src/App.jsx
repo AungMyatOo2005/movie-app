@@ -10,7 +10,7 @@ const App = () => {
     <ContextProvider>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Home />} />
+          <Route path={"/movie-app"} element={<Home />} />
           <Route path={"/movie/:id"} element={<Movie />} />
           <Route path={"/favorite"} element={<FavoriteMovieList />} />
         </Routes>
