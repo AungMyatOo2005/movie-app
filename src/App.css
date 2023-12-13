@@ -1,0 +1,50 @@
+body {
+  background-color: #0c0f26;
+  overflow-x: hidden;
+}
+* {
+  scroll-behavior: smooth;
+}
+
+.genre::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: -10;
+  background-color: #8f8f8f28;
+  transition: width 0.3s ease-in-out;
+}
+.genre:hover::before {
+  width: 100%;
+}
+.genre:active::before {
+  background-color: rgba(114, 114, 255, 0.164);
+}
+.side-bar::-webkit-scrollbar {
+  width: 10px;
+}
+.side-bar::-webkit-scrollbar-thumb {
+  background: rgb(66, 66, 66);
+  border-radius: 20px;
+}
+.select-toggle {
+  height: 0;
+  transition: height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.open {
+  height: 105px;
+}
+.animation-sidebar {
+  animation: SideBar 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes SideBar {
+  0% {
+    transform: translateX(-100px);
+  }
+  110% {
+    transform: translateY(0);
+  }
+}
