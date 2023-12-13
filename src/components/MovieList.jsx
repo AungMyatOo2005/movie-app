@@ -16,6 +16,7 @@ const MovieList = () => {
     setCurrentPage,
     movies,
     setMovies,
+    setSidebar,
   } = useContext(MyContext);
   const apiUrl = "https://api.themoviedb.org/3/";
   const api_key = "04c35731a5ee918f014970082a0088b1";
@@ -86,14 +87,21 @@ const MovieList = () => {
               There is no movie in the data base.
             </h1>
           )}
-          <div className="w-fit grid grid-cols-3 sm:grid-cols-4 gap-5 sm:gap-10 py-10 sm:px-10 px-5">
+          <div
+            className="w-fit grid grid-cols-3 sm:grid-cols-4 gap-5 sm:gap-10 py-10 sm:px-10 px-5"
+            onClick={() => setSidebar(false)}
+          >
             {isLoading && !error && <Loading />}
             {!isLoading && !genreId
               ? movies
-                  .filter((movie) => movie.poster_path)
+                  .filter(
+                    (movie) => movie.poster_path && movie.vote_average > 1
+                  )
                   .map((movie) => <MovieCard movie={movie} key={movie.id} />)
               : movies
-                  .filter((movie) => movie.poster_path)
+                  .filter(
+                    (movie) => movie.poster_path && movie.vote_average > 1
+                  )
                   .sort((a, b) => b.vote_average - a.vote_average)
                   .map((movie) => <MovieCard movie={movie} key={movie.id} />)}
           </div>

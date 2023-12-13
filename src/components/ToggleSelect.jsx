@@ -8,6 +8,7 @@ const ToggleSelect = ({ isToggle, callBack, styles }) => {
     setSearchValue,
     setIsLoading,
     setCurrentPage,
+    setSidebar
   } = useContext(MyContext);
   const selectValue = [
     {
@@ -45,6 +46,7 @@ const ToggleSelect = ({ isToggle, callBack, styles }) => {
             setSearchValue("");
             setIsLoading(true);
             setCurrentPage(1);
+            setSidebar(false)
             window.scrollTo(0, 0);
           }}
         >

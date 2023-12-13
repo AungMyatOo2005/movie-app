@@ -4,7 +4,7 @@ import axios from "axios";
 import LinkButton from "./LinkButton";
 import TitleAndOverview from "./TitleAndOverview";
 import RatingStar from "./RatingStar";
-import {ClipLoader} from 'react-spinners'
+import { ClipLoader } from "react-spinners";
 const Movie = () => {
   const { id } = useParams();
   const apiUrl = "https://api.themoviedb.org/3/";
@@ -43,7 +43,10 @@ const Movie = () => {
         <div
           className={` bg-fixed bg-center bg-no-repeat bg-cover`}
           style={{
-            backgroundImage: `url(${imageUrl + movie.backdrop_path})`,
+            backgroundImage: `url(${
+              imageUrl +
+              (movie.backdrop_path ? movie.backdrop_path : movie.poster_path)
+            })`,
           }}
         >
           <div className="w-full backdrop-blur-[10px] px-0  sm:px-32 md:px-56">
@@ -51,7 +54,12 @@ const Movie = () => {
               <RatingStar movie={movie} />
               <div className="relative">
                 <img
-                  src={imageUrl + movie.backdrop_path}
+                  src={
+                    imageUrl +
+                    (movie.backdrop_path
+                      ? movie.backdrop_path
+                      : movie.poster_path)
+                  }
                   className=" md:h-[450px] w-full object-cover "
                 />
                 {movie.tagline && (
