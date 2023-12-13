@@ -12,7 +12,7 @@ const App = () => {
         <Routes>
           <Route path={"/movie-app"} element={<Home />} />
           <Route path={"/movie-app/movie/:id"} element={<Movie />} />
-          <Route path={"/favorite"} element={<FavoriteMovieList />} />
+          <Route path={"/movie-app/favorite"} element={<FavoriteMovieList />} />
         </Routes>
       </BrowserRouter>
     </ContextProvider>
